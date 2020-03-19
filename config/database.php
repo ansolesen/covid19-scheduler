@@ -78,6 +78,22 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'production' => [
+            'driver' => 'pgsql',
+            'url' => env('PRODUCTION_DATABASE_URL'),
+            'host' => env('PRODUCTION_DB_HOST', '127.0.0.1'),
+            'port' => env('PRODUCTION_DB_PORT', '5432'),
+            'database' => env('PRODUCTION_DB_DATABASE', 'forge'),
+            'username' => env('PRODUCTION_DB_USERNAME', 'forge'),
+            'password' => env('PRODUCTION_DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
+
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
