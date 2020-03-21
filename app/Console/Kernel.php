@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->job(new FetchNewData())->everyThirtyMinutes();
+         $schedule->job(new FetchNewData())->everyMinute();
     }
 
     /**
