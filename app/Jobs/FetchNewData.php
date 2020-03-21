@@ -47,7 +47,7 @@ class FetchNewData implements ShouldQueue
         DB::connection($this->connectionName)
             ->table($this->tableName)
             ->whereDate('modified_on', ">", now()->subHour())
-            ->orderBy('modified_on', 'DESC')
+            ->orderBy('modified_on', 'desc')
             ->chunk($this->chunkSize, function($rows){
                 InsertOrCreateReportingRows::dispatch($rows);
             });
